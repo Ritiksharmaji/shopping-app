@@ -162,4 +162,9 @@
       margin-top: 32px;
     }
   }
-  
+  .text-light{
+    color: white;
+  }
+  .text-dark{
+    color: black;
+  }

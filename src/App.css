@@ -10,3 +10,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* App.css */
+:root {
+  --background-color-light: #ffffff;
+  --background-color-dark: #121212;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+}
+
+.root-light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.root-dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.header-light, .home-light {
+  color: var(--text-color-light);
+}
+
+.header-dark, .home-dark {
+  color: var(--text-color-dark);
+}

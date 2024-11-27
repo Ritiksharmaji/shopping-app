@@ -23,3 +23,8 @@ password: rahul@2021
 
 Username: praneetha
 password: praneetha@2021
+
+## -------------- adding the feactures ----------
+1) mood change dark , light 
+2) language change
+3) Voice Search and Assistant:

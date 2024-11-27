@@ -11,15 +11,23 @@ import ProtectedRoute from './components/ProtectedRoute'
 import CartContext from './context/CartContext'
 
 import './App.css'
+import Header from './components/Header'
 
 class App extends Component {
   state = {
     cartList: [],
+    isDarkTheme: false,
+  }
+
+
+  toggleTheme = () => {
+    this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
   }
 
   removeAllCartItems = () => {
     this.setState({cartList: []})
   }
+
 
   incrementCartItemQuantity = id => {
     this.setState(prevState => ({
@@ -86,9 +94,14 @@ class App extends Component {
   }
 
   render() {
-    const {cartList} = this.state
+    const {cartList , isDarkTheme} = this.state
+    console.log(isDarkTheme)
+    const rootClass = isDarkTheme ? 'root-dark' : 'root-light';
+  const headerClass = isDarkTheme ? 'header-dark' : 'header-light';
+  const homeClass = isDarkTheme ? 'home-dark' : 'home-light';
 
-    return (
+   return (
+    <div className={rootClass}>
       <CartContext.Provider
         value={{
           cartList,
@@ -97,23 +110,24 @@ class App extends Component {
           incrementCartItemQuantity: this.incrementCartItemQuantity,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
           removeAllCartItems: this.removeAllCartItems,
+          isDarkTheme,
+          toggleTheme: this.toggleTheme,
         }}
       >
+        <Header headerClass={headerClass} />
         <Switch>
           <Route exact path="/login" component={LoginForm} />
-          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/" component={() => <Home homeClass={homeClass} />} />
           <ProtectedRoute exact path="/products" component={Products} />
-          <ProtectedRoute
-            exact
-            path="/products/:id"
-            component={ProductItemDetails}
-          />
+          <ProtectedRoute exact path="/products/:id" component={ProductItemDetails} />
           <ProtectedRoute exact path="/cart" component={Cart} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="not-found" />
         </Switch>
       </CartContext.Provider>
-    )
+    </div>
+  );
+
   }
 }
 

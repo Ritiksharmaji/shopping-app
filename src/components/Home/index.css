@@ -1,3 +1,4 @@
+/* Base styles for Home */
 .home-container {
   display: flex;
   flex-direction: column;
@@ -8,8 +9,10 @@
   padding-bottom: 50px;
   width: 90%;
   max-width: 1110px;
+  height: 90vh;
 }
 
+/* Media query for larger screens */
 @media screen and (min-width: 768px) {
   .home-container {
     flex-direction: row;
@@ -24,6 +27,7 @@
   align-items: center;
 }
 
+/* Alignment adjustment for larger screens */
 @media screen and (min-width: 768px) {
   .home-content {
     align-items: flex-start;
@@ -34,6 +38,7 @@
   width: 206px;
 }
 
+/* Hide mobile image on larger screens */
 @media screen and (min-width: 768px) {
   .home-mobile-img {
     display: none;
@@ -46,6 +51,7 @@
   margin-left: 85px;
 }
 
+/* Hide desktop image on smaller screens */
 @media screen and (max-width: 767px) {
   .home-desktop-img {
     display: none;
@@ -61,6 +67,7 @@
   text-align: center;
 }
 
+/* Adjust heading for larger screens */
 @media screen and (min-width: 768px) {
   .home-heading {
     font-size: 46px;
@@ -78,6 +85,7 @@
   text-align: center;
 }
 
+/* Adjust description for larger screens */
 @media screen and (min-width: 768px) {
   .home-description {
     font-size: 18px;
@@ -101,8 +109,70 @@
   cursor: pointer;
 }
 
+/* Adjust button size for larger screens */
 @media screen and (min-width: 768px) {
   .shop-now-button {
     font-size: 16px;
   }
 }
+
+/* Light Theme */
+.light-theme {
+  background-color: #f0f0f0; /* Light background */
+  color: black; /* Dark text on light background */
+}
+
+.light-theme .home-heading {
+  color: #333; /* Dark color for the heading */
+}
+
+.light-theme .home-description {
+  color: #555; /* Darker color for description */
+}
+
+.light-theme .shop-now-button {
+  background-color: #007bff; /* Button color in light theme */
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: white; /* White text on dark background */
+}
+
+.dark-theme .home-heading {
+  color: white; /* White heading */
+}
+
+.dark-theme .home-description {
+  color: #ddd; /* Lighter description text */
+}
+
+.dark-theme .shop-now-button {
+  background-color: #ff6347; /* Button color in dark theme */
+}
+
+/* Additional styles to tweak elements further */
+.home-container .home-content {
+  transition: all 0.3s ease; /* Smooth transition for theme change */
+}
+
+.home-heading,
+.home-description {
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.shop-now-button {
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Light Theme Background */
+.text-light{
+  color: white;
+}
+.text-dark{
+  color: black;
+}
+/* Other styles remain the same */
+
+/* Media queries, text color, and button styles as you already have */

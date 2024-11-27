@@ -72,8 +72,18 @@
   list-style-type: none;
   margin-top: 0px;
   margin-bottom: 0px;
+  
+  
 }
 
+.nav-menu {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+} 
 @media screen and (max-width: 767px) {
   .nav-menu {
     display: none;
@@ -156,15 +166,13 @@
   outline: none;
 }
 
+
 @media screen and (min-width: 768px) {
   .nav-mobile-btn {
     display: none;
   }
 }
 
-.nav-bar-image {
-  width: 24px;
-}
 
 .cart-count-badge {
   background-color: #bfdbfe;
@@ -185,3 +193,62 @@
     background-color: #e6f6ff;
   }
 }
+
+.mood-changer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0; /* Remove unnecessary spacing issues */
+}
+
+
+.nav-bar-img {
+  width: 40px; /* Default size for larger screens */
+  height: auto;
+}
+
+.mood-changer-icon {
+  font-size: 40px; /* Default size for larger screens */
+}
+
+@media screen and (max-width: 767px) {
+  .nav-bar-img {
+    width: 30px; /* Reduced size for mobile view */
+    height: auto;
+  }
+
+  .mood-changer-icon {
+    font-size: 30px; /* Smaller size for mobile view */
+  }
+}
+
+
+/* Default light theme styles */
+.light {
+  --font-color: #000000; /* Black text for light theme */
+  --background-color: #ffffff; /* White background for light theme */
+}
+
+/* Dark theme styles */
+.dark {
+  --font-color: #ffffff; /* White text for dark theme */
+  --background-color: #121212; /* Dark background for dark theme */
+}
+
+/* Apply the font color and background color globally */
+body {
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
+
+/* Nav link styles for both light and dark theme */
+.nav-link {
+  color: var(--font-color); /* Dynamically changes based on the theme */
+}
+
+.nav-link:hover {
+  color: #ffcc00; /* Optional hover effect */
+}
+
