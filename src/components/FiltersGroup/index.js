@@ -8,6 +8,7 @@ const FiltersGroup = (props) => {
 
   const { isDarkTheme } = useContext(CartContext); // Consuming the context
   const textClass = isDarkTheme ? 'text-light' : 'text-dark'; // Get the theme-based class
+  const headingClass = isDarkTheme ? 'heading-light' : 'heading-dark'; 
   
 
   const onEnterSearchInput = (event) => event.key === 'Enter' && enterSearchInput();
@@ -50,7 +51,9 @@ const FiltersGroup = (props) => {
         key={category.categoryId}
         onClick={() => changeCategory(category.categoryId)}
       >
-        <p className={`category-name ${category.categoryId === activeCategoryId ? 'active-category-name' : ''} ${textClass}`}>
+        <p
+          className={`category-name ${category.categoryId === activeCategoryId ? 'active-category-name' : ''} ${textClass}`}
+        >
           {category.name}
         </p>
       </li>
@@ -61,11 +64,11 @@ const FiltersGroup = (props) => {
     <div className="filters-group-container">
       {renderSearchInput()}
       <div>
-        <h1 className={`category-heading ${textClass}`}>Category</h1>
+        <h1 className={`category-heading ${headingClass}`}>Category</h1>
         <ul className="categories-list">{renderCategoriesList()}</ul>
       </div>
       <div>
-        <h1 className={`rating-heading ${textClass}`}>Rating</h1>
+        <h1 className={`rating-heading ${headingClass}`}>Rating</h1>
         <ul className="ratings-list">{renderRatingsFiltersList()}</ul>
       </div>
       <button type="button" className="clear-filters-btn" onClick={clearFilters}>

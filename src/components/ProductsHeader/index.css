@@ -58,4 +58,49 @@
   color: #7e858e;
   font-family: 'Roboto';
   font-size: 14px;
+  cursor: pointer;
+}
+/* Example CSS for active sort option */
+.active-sort-option {
+  background-color: #0967d2; /* Active background color */
+  color: white; /* Active text color */
+}
+/* Styling for the select element based on theme */
+.select-light {
+  background-color: #fff;
+  color: #000;
+}
+
+.select-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Active option style for select */
+select:focus {
+  border: 2px solid #0967d2; /* Adding a border when the select is active */
+  outline: none;
+}
+
+/* Styling for active selected option */
+select option:checked {
+  background-color: #0967d2;/* Background color when option is selected */
+  color: white;
+}
+
+/* Option hover effect */
+select option:hover {
+  background-color: #0967d2; /* Hover color for options */
+}
+
+.heading-light{
+  color: #939099;
+}
+
+.heading-dark{
+  color: #12022f;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 24px;
 }

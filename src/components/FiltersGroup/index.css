@@ -168,3 +168,12 @@
   .text-dark{
     color: black;
   }
+  
+  .heading-light{
+    color: #939099;
+  }
+
+  .active-category-name {
+    color: #0967d2; /* Example active color for category */
+    font-weight: bold; /* Optional: Style to indicate active category */
+  }
