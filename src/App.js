@@ -114,7 +114,7 @@ class App extends Component {
           toggleTheme: this.toggleTheme,
         }}
       >
-        <Header headerClass={headerClass} />
+        {/* <Header headerClass={headerClass} /> */}
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <ProtectedRoute exact path="/" component={() => <Home homeClass={homeClass} />} />

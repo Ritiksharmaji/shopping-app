@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import './index.css';
 import CartContext from '../../context/CartContext';
+import Header from '../Header';
 
 const Home = () => (
   <>
+  <Header/>
     <CartContext.Consumer>
       {(value) => {
         const { isDarkTheme } = value;

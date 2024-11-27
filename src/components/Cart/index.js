@@ -1,6 +1,6 @@
 import CartContext from '../../context/CartContext'
 
-// import Header from '../Header'
+import Header from '../Header'
 import EmptyCartView from '../EmptyCartView'
 import CartListView from '../CartListView'
 import CartSummary from '../CartSummary'
@@ -18,7 +18,7 @@ const Cart = () => (
 
       return (
         <>
-          {/* <Header /> */}
+          <Header />
           <div className="cart-container">
             {showEmptyView ? (
               <EmptyCartView />
